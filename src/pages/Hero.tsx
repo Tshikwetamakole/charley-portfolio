@@ -6,21 +6,6 @@ import animationData from "../assets/animations/wired-arrow.json";
 import LottieIcon from "../components/LottieIcon";
 
 const Hero = () => {
-  const handleDownload = () => {
-    const confirmed = window.confirm(
-      "You're about to download Emmanuel Charley's PDF resume. Do you want to continue?"
-    );
-    if (confirmed) {
-      const resumeURL = `${import.meta.env.BASE_URL}resume.pdf`;
-      const link = document.createElement("a");
-      link.href = resumeURL;
-      link.setAttribute("download", "Emmanuel-Raluswinga-Resume.pdf");
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
-  };
-
   const handleView = () => {
     const resumeURL = `${import.meta.env.BASE_URL}resume.pdf`;
     window.open(resumeURL, "_blank");
@@ -93,17 +78,6 @@ const Hero = () => {
             transition={{ type: "spring", stiffness: 300 }}
           >
             View Resume
-          </motion.button>
-
-          {/* Download Resume */}
-          <motion.button
-            onClick={handleDownload}
-            className="w-full px-6 py-2 transition-all border rounded-lg sm:w-auto border-accent text-accent hover:bg-accent hover:text-white"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            Download Resume
           </motion.button>
 
           {/* Hire Me */}

@@ -31,7 +31,7 @@ const HomePage = () => (
 const App = () => {
   return (
     <div className="text-white bg-gray-900 scroll-smooth">
-      <Router>
+      <Router basename="/emmanuel-charley-portfolio">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/posts/:slug" element={<Post />} />
